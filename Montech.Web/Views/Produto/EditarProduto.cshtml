@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Edição de Produtos";
+}
+
+@model ProdutoModel
+
+<h1 class="display-4">Editar Produto</h1>
+
+<form asp-controller="Produto" asp-action="EditarProduto" method="post" class="col" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" asp-for="Nome" class="form-control" id="nome" placeholder="Informe o Nome do Produto">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="foto" class="form-label">Foto do Produto:</label>
+        <input type="text" asp-for="Foto" class="form-control" id="foto" placeholder="Opcional">
+        <span asp-validation-for="Foto" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <input type="text" asp-for="Descricao" class="form-control" id="descricao" placeholder="Ex: Usado, Lacrado, parcelado de 3x...">
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="dataCompra" class="form-label">Data da compra:</label>
+        <input type="date" asp-for="DataCompra" class="form-control" id="dataCompra" placeholder="Informe a Data da compra do Produto">
+        <span asp-validation-for="DataCompra" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="dataVenda" class="form-label">Data da Venda:</label>
+        <input type="date" asp-for="DataVenda" class="form-control" id="dataVenda" placeholder="Informe a Data da Venda do Produto">
+        <span asp-validation-for="DataVenda" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="valorCompra" class="form-label">Valor da compra:</label>
+        <input type="text" asp-for="ValorCompra" class="form-control" id="valorCompra" placeholder="R$">
+        <span asp-validation-for="ValorCompra" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="valorAtualDeMercado" class="form-label">Valor de Mercado:</label>
+        <input type="text" asp-for="ValorAtualDeMercado" class="form-control" id="valorAtualDeMercado" placeholder="R$">
+        <span asp-validation-for="ValorAtualDeMercado" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="valorVenda" class="form-label">Valor da Venda:</label>
+        <input type="text" asp-for="ValorVenda" class="form-control" id="valorVenda" placeholder="R$">
+        <span asp-validation-for="ValorVenda" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="status" class="form-label">Status:</label>
+        <input type="text" asp-for="Status" class="form-control" id="status" placeholder="Informe o Status do Produto">
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria do Produto:</label>
+        <input type="text" asp-for="CategoriaNome" class="form-control" id="categoria" placeholder="Ex: Eletrônico, maquinário, eletrodoméstico">
+        <span asp-validation-for="CategoriaNome" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+</form>

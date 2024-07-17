@@ -1,0 +1,54 @@
+﻿@model ProdutoModel
+
+@{
+
+}
+
+<h1 class="display-4">Cadastro de Novos Produtos</h1>
+
+<form asp-controller="Produto" asp-action="CriarProduto" method="post" class="col" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" asp-for="Nome" class="form-control" id="nome" placeholder="Informe o Nome do Produto">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <input type="text" asp-for="Descricao" class="form-control" id="descricao" placeholder="Ex: Usado, Lacrado, parcelado de 3x...">
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-sm-3">
+            <label for="dataCompra" class="form-label">Data da compra:</label>
+            <input type="date" asp-for="DataCompra" class="form-control" id="dataCompra" placeholder="Informe a Data da compra do Produto">
+            <span asp-validation-for="DataCompra" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-3">
+            <label for="valorCompra" class="form-label">Valor da compra:</label>
+            <input type="text" asp-for="ValorCompra" class="form-control" id="valorCompra" placeholder="R$ 0,00">
+            <span asp-validation-for="ValorCompra" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="categoriaNome" class="form-label">Categoria do Produto:</label>
+        <input type="text" asp-for="CategoriaNome" class="form-control" id="categoriaNome" placeholder="Ex: Eletrônico, maquinário, eletrodoméstico">
+        <span asp-validation-for="CategoriaNome" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label for="imagemCarregada" class="form-label">Foto do Produto:</label>
+        <input type="file" accept="image/png, image/jpeg" class="form-control" id="imagemCarregada" placeholder="Busque a foto do Produto" name="imagemCarregada" />
+        <br />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Adicionar produto</button>
+
+    <a class="btn btn-primary btn-block" asp-controller="Produto" asp-action="Index" role="button">Voltar</a>
+
+</form>

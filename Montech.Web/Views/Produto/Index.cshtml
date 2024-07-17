@@ -1,0 +1,125 @@
+﻿@using System.Globalization
+@model Montech.Web.ViewModels.ProdutoListViewModel
+
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<div>
+    <a class="btn btn-success" role="button" asp-controller="Produto" asp-action="CriarProduto">Adicionar Novo Produto</a>
+</div>
+
+<h3 class="display-4">Listagem de Produtos</h3>
+
+<table class="table table-striped" id="table-produtos">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">Data da Compra</th>
+            <th scope="col">Data da Venda</th>
+            <th scope="col">Valor da Compra</th>
+            <th scope="col">Valor de Mercado</th>
+            <th scope="col">Valor Da Venda</th>
+            <th scope="col">Status</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Edição</th>
+            <th scope="col">Exclusão</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Produtos != null && Model.Produtos.Any())
+        {
+            foreach (ProdutoModel produto in Model.Produtos)
+            {
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Foto</td>
+                    <td>@produto.Descricao</td>
+                    <td>@produto.DataCompra</td>
+                    <td>@produto.DataVenda</td>
+                    <td>@produto.ValorCompra.ToString("F2", new CultureInfo("pt-BR"))</td>
+                    <td>@produto.ValorAtualDeMercado</td>
+                    <td>@produto.ValorVenda</td>
+                    <td>@produto.Status</td>
+                    <td>@produto.CategoriaNome</td>
+                    <td>
+                        <a class="btn btn-primary" role="button" href="@Url.Action("EditarProduto", "Produto", new { id = produto.Id })">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" role="button" onclick="confirmDelete(@produto.Id)">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#table-produtos').DataTable();
+        });
+    </script>
+}
+
+<!-- Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Você tem certeza que deseja excluir este produto?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.Paginacao.TotalPaginas; i++)
+        {
+            <li class="page-item @(Model.Paginacao.PaginaAtual == i ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-pageNumber="@i" asp-route-pageSize="@Model.Paginacao.ItensPorPagina">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+<script>
+    function confirmDelete(productId) {
+        var myModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'), {
+            keyboard: false
+        });
+        myModal.show();
+        document.getElementById('confirmDeleteButton').setAttribute('data-product-id', productId);
+    }
+
+    document.getElementById('confirmDeleteButton').addEventListener('click', function () {
+        var productId = this.getAttribute('data-product-id');
+
+        // Cria um formulário e envia uma requisição POST
+        var form = document.createElement('form');
+        form.method = 'post';
+        form.action = '@Url.Action("ExcluirProduto", "Produto")';
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'id';
+        input.value = productId;
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    });
+</script>
+
+

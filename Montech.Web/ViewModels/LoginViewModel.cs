@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Montech.Web.Models;
+namespace Montech.Web.ViewModels;
 
 public class LoginViewModel
 {

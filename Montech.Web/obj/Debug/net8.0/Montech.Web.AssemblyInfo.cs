@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Montech.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d31b6e6c9e3652f00c185df27da12f0937694b88")]
 [assembly: System.Reflection.AssemblyProductAttribute("Montech.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Montech.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,54 @@
+﻿@model ServicosPrestadosModel
+
+@{
+
+}
+
+<h1 class="display-4">Cadastro de Novos Serviços Prestados</h1>
+
+<form asp-controller="ServicoPrestado" asp-action="CriarServicoPrestado" method="post" class="col" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" asp-for="Nome" class="form-control" id="nome" placeholder="Informe o Nome do serviço">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <input type="text" asp-for="Descricao" class="form-control" id="descricao" placeholder="Ex: Contábil, securativo, limpeza, etc...">
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-sm-3">
+            <label for="dataCriacaoServico" class="form-label">Criação de Serviço:</label>
+            <input type="date" asp-for="DataCriacaoServico" class="form-control" id="dataCriacaoServico" placeholder="Informe a Data da criação do serviço">
+            <span asp-validation-for="DataCriacaoServico" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-3">
+            <label for="dataPrazoServico" class="form-label">Prazo do Serviço:</label>
+            <input type="date" asp-for="DataPrazoServico" class="form-control" id="dataPrazoServico" placeholder="Informe a data de prazo do serviço">
+            <span asp-validation-for="DataPrazoServico" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="valorServico" class="form-label">Valor do Serviço:</label>
+        <input type="text" asp-for="ValorServico" class="form-control" id="valorServico" placeholder="Informe o valor do serviço">
+        <span asp-validation-for="ValorServico" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="clienteServico" class="form-label">Cliente:</label>
+        <input type="text" asp-for="Cliente" class="form-control" id="clienteServico" placeholder="Informe o cliente do serviço">
+        <span asp-validation-for="Cliente" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Adicionar serviço</button>
+
+    <a class="btn btn-primary btn-block" asp-controller="Produto" asp-action="Index" role="button">Voltar</a>
+
+</form>

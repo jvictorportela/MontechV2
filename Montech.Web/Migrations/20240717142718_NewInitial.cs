@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Montech.Web.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateMigrations : Migration
+    public partial class NewInitial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,6 +38,26 @@ namespace Montech.Web.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Empresas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ServicosPrestados",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(350)", maxLength: 350, nullable: false),
+                    DataCriacaoServico = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataPrazoServico = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataFinalizacaoServico = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ValorServico = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    Cliente = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ServicosPrestados", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,6 +125,9 @@ namespace Montech.Web.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Produtos");
+
+            migrationBuilder.DropTable(
+                name: "ServicosPrestados");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

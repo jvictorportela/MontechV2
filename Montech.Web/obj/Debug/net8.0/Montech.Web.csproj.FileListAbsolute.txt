@@ -266,6 +266,7 @@ C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.cs
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.RazorAssemblyInfo.cache
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.RazorAssemblyInfo.cs
+C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.sourcelink.json
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\staticwebassets.build.json
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\staticwebassets.development.json
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\staticwebassets\msbuild.Montech.Web.Microsoft.AspNetCore.StaticWebAssets.props

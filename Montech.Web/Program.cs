@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Montech.Web.Data;
 using Montech.Web.Repository;
+using Montech.Web.Repository.ServicoPrestado;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DeveloperConnection")));
 
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
+builder.Services.AddScoped<IServicoPrestadoRepository, ServicoPrestadoRepository>();
 
 var app = builder.Build();
 

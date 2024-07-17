@@ -1,0 +1,121 @@
+﻿@using System.Globalization
+@model Montech.Web.ViewModels.ServicosPrestadosListViewModel
+
+@{
+    ViewData["Title"] = "Lista de Serviços Prestados";
+}
+
+<div>
+    <a class="btn btn-success" role="button" asp-controller="ServicoPrestado" asp-action="CriarServicoPrestado">Adicionar Novo Serviço</a>
+</div>
+
+<h3 class="display-4">Listagem de Serviços</h3>
+
+<table class="table table-striped" id="table-servicos">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Descricao do Serviço</th>
+            <th scope="col">Criação do Serviço</th>
+            <th scope="col">Prazo do Serviço</th>
+            <th scope="col">Finalização do Serviço</th>
+            <th scope="col">Valor do Serviço</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edição</th>
+            <th scope="col">Exclusão</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Servicos != null && Model.Servicos.Any())
+        {
+            foreach (var servico in Model.Servicos)
+            {
+                <tr>
+                    <td>@servico.Id</td>
+                    <td>@servico.Nome</td>
+                    <td>@servico.Descricao</td>
+                    <td>@servico.DataCriacaoServico</td>
+                    <td>@servico.DataPrazoServico</td>
+                    <td>@servico.DataFinalizacaoServico</td>
+                    <td>@servico.ValorServico</td>
+                    <td>@servico.Cliente</td>
+                    <td>@servico.Status</td>
+                    <td>
+                        <a class="btn btn-primary" role="button" href="@Url.Action("EditarServicoPrestado", "ServicoPrestado", new { id = servico.Id })">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" role="button" onclick="confirmDelete(@servico.Id)">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#table-servicos').DataTable();
+        });
+    </script>
+}
+
+<!-- Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Você tem certeza que deseja excluir este serviço?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.Paginacao.TotalPaginas; i++)
+        {
+            <li class="page-item @(Model.Paginacao.PaginaAtual == i ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-pageNumber="@i" asp-route-pageSize="@Model.Paginacao.ItensPorPagina">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+<script>
+    function confirmDelete(servicoId) {
+        var myModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'), {
+            keyboard: false
+        });
+        myModal.show();
+        document.getElementById('confirmDeleteButton').setAttribute('data-servico-id', servicoId);
+    }
+
+    document.getElementById('confirmDeleteButton').addEventListener('click', function () {
+        var servicoId = this.getAttribute('data-servico-id');
+
+        // Cria um formulário e envia uma requisição POST
+        var form = document.createElement('form');
+        form.method = 'post';
+        form.action = '@Url.Action("ExcluirServicoPrestado", "ServicoPrestado")';
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'id';
+        input.value = servicoId;
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    });
+</script>
+
+

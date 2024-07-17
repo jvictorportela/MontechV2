@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Montech.Web.Models;
 using Montech.Web.Repository;
 using Montech.Web.ViewModels;
@@ -62,15 +61,6 @@ public class ProdutoController : Controller
             
             return RedirectToAction("Index");
         }
-        //else
-        //{
-        //    // Logar os erros de validação
-        //    var errors = ModelState.Values.SelectMany(v => v.Errors);
-        //    foreach (var error in errors)
-        //    {
-        //        Console.WriteLine(error.ErrorMessage); // Ou use um logger para salvar os erros
-        //    }
-        //}
         return View(produto);
     }
 

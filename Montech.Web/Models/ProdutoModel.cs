@@ -26,6 +26,7 @@ public class ProdutoModel
     public DateTime? DataVenda { get; set; }
 
     [DataType(DataType.Currency)]
+    [Column(TypeName = "decimal(18,2)")]
     public decimal ValorCompra { get; set; }
 
     [DataType(DataType.Currency)]

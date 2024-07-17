@@ -12,8 +12,8 @@ using Montech.Web.Data;
 namespace Montech.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240717104921_UpdateMigrationss")]
-    partial class UpdateMigrationss
+    [Migration("20240717143944_NullableDataFinalizacao")]
+    partial class NullableDataFinalizacao
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -128,6 +128,49 @@ namespace Montech.Web.Migrations
                     b.HasIndex("EmpresaId");
 
                     b.ToTable("Produtos");
+                });
+
+            modelBuilder.Entity("Montech.Web.Models.ServicosPrestadosModel", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Cliente")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataCriacaoServico")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataFinalizacaoServico")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataPrazoServico")
+                        .IsRequired()
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(350)
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorServico")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServicosPrestados");
                 });
 
             modelBuilder.Entity("Montech.Web.Models.UsuarioModel", b =>

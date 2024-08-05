@@ -1,8 +1,8 @@
 ﻿using Montech.Web.Models;
 
-namespace Montech.Web.Repository;
+namespace Montech.Web.Repository.Produto;
 
-public interface IProdutoRepository
+public interface IProdutoInterface
 {
     Task<(List<ProdutoModel> produtos, int totalItens)> BuscarTodos(int pageNumber, int pageSize);
     Task<ProdutoModel> ListarPorId(long id);

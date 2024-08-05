@@ -1,0 +1,36 @@
+﻿@model UsuarioLoginDto
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutDeslogado";
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Login" asp-controller="Login" method="post">
+    <h1>Faça seu Login</h1>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" asp-for="Email">
+        <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+    </div>
+    <div class="mb-3">
+        <label for="senha" class="form-label">Senha:</label>
+        <input type="password" class="form-control" id="senha" asp-for="Senha">
+    </div>
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a class="btn btn-primary w-7" asp-action="Registrar" asp-controller="Login">Cadastrar-se</a>
+</form>

@@ -2,7 +2,7 @@
 
 namespace Montech.Web.Repository.ServicoPrestado;
 
-public interface IServicoPrestadoRepository
+public interface IServicoPrestadoInterface
 {
     Task<(List<ServicosPrestadosModel> servicosPrestados, int totalItens)> BuscarTodos(int pageNumber, int pageSize);
     Task<ServicosPrestadosModel> ListarPorId(long id);

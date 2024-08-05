@@ -2,7 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome to Montech</h1>
-    <p>O Sistema de monitoramento de bens ideal para a sua empresa!</p>
+    <p>O Sistema de monitoramento ideal para a sua empresa!</p>
 </div>

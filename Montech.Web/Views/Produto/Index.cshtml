@@ -5,6 +5,19 @@
     ViewData["Title"] = "Lista de Produtos";
 }
 
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
 <div>
     <a class="btn btn-success" role="button" asp-controller="Produto" asp-action="CriarProduto">Adicionar Novo Produto</a>
 </div>

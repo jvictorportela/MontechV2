@@ -5,6 +5,19 @@
     ViewData["Title"] = "Lista de Serviços Prestados";
 }
 
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
 <div>
     <a class="btn btn-success" role="button" asp-controller="ServicoPrestado" asp-action="CriarServicoPrestado">Adicionar Novo Serviço</a>
 </div>

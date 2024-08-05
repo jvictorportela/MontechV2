@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\ProjetosPessoais\\MontechV2-master\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|c:\\projetospessoais\\montechv2-master\\montech.web\\controllers\\servicoprestadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|solutionrelative:montech.web\\controllers\\servicoprestadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|c:\\projetospessoais\\montechv2-master\\montech.web\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|solutionrelative:montech.web\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|c:\\projetospessoais\\montechv2-master\\montech.web\\views\\servicoprestado\\editarservicoprestado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|solutionrelative:montech.web\\views\\servicoprestado\\editarservicoprestado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|c:\\projetospessoais\\montechv2-master\\montech.web\\views\\produto\\editarproduto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|solutionrelative:montech.web\\views\\produto\\editarproduto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|c:\\projetospessoais\\montechv2-master\\montech.web\\views\\servicoprestado\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|solutionrelative:montech.web\\views\\servicoprestado\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|c:\\projetospessoais\\montechv2-master\\montech.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64FB1F95-8B9D-4C3D-8454-8EECCC7D52A0}|Montech.Web\\Montech.Web.csproj|solutionrelative:montech.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +13,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 301,
+          "DockedWidth": 361,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -38,73 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Controllers\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "Montech.Web\\Controllers\\ProdutoController.cs",
-              "ToolTip": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Controllers\\ProdutoController.cs",
-              "RelativeToolTip": "Montech.Web\\Controllers\\ProdutoController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAwwDgAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T15:00:02.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditarProduto.cshtml",
-              "DocumentMoniker": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Views\\Produto\\EditarProduto.cshtml",
-              "RelativeDocumentMoniker": "Montech.Web\\Views\\Produto\\EditarProduto.cshtml",
-              "ToolTip": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Views\\Produto\\EditarProduto.cshtml",
-              "RelativeToolTip": "Montech.Web\\Views\\Produto\\EditarProduto.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T14:58:54.399Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 245,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Views\\ServicoPrestado\\Index.cshtml",
-              "RelativeDocumentMoniker": "Montech.Web\\Views\\ServicoPrestado\\Index.cshtml",
-              "ToolTip": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Views\\ServicoPrestado\\Index.cshtml",
-              "RelativeToolTip": "Montech.Web\\Views\\ServicoPrestado\\Index.cshtml",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T15:11:50.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditarServicoPrestado.cshtml",
-              "DocumentMoniker": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Views\\ServicoPrestado\\EditarServicoPrestado.cshtml",
-              "RelativeDocumentMoniker": "Montech.Web\\Views\\ServicoPrestado\\EditarServicoPrestado.cshtml",
-              "ToolTip": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Views\\ServicoPrestado\\EditarServicoPrestado.cshtml",
-              "RelativeToolTip": "Montech.Web\\Views\\ServicoPrestado\\EditarServicoPrestado.cshtml",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAADYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T14:57:11.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ServicoPrestadoController.cs",
-              "DocumentMoniker": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Controllers\\ServicoPrestadoController.cs",
-              "RelativeDocumentMoniker": "Montech.Web\\Controllers\\ServicoPrestadoController.cs",
-              "ToolTip": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Controllers\\ServicoPrestadoController.cs",
-              "RelativeToolTip": "Montech.Web\\Controllers\\ServicoPrestadoController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAIA0wC4AAAAEAAAA",
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Montech.Web\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\ProjetosPessoais\\MontechV2-master\\Montech.Web\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Montech.Web\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T14:31:55.818Z",
+              "WhenOpened": "2024-08-05T19:32:14.787Z",
               "EditorCaption": ""
             }
           ]

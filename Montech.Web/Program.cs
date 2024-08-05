@@ -1,7 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Montech.Web.Data;
 using Montech.Web.Repository;
+using Montech.Web.Repository.Login;
+using Montech.Web.Repository.Produto;
+using Montech.Web.Repository.Senha;
 using Montech.Web.Repository.ServicoPrestado;
+using Montech.Web.Repository.Sessao;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +15,19 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DeveloperConnection")));
 
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
-builder.Services.AddScoped<IServicoPrestadoRepository, ServicoPrestadoRepository>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddScoped<IProdutoInterface, ProdutoService>();
+builder.Services.AddScoped<IServicoPrestadoInterface, ServicoPrestadoService>();
+builder.Services.AddScoped<ILoginInterface, LoginServices>();
+builder.Services.AddScoped<ISenhaInterface, SenhaServices>();
+builder.Services.AddScoped<ISessaoInterface, SessaoService>();
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -31,8 +46,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseSession();
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

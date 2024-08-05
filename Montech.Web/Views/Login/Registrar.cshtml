@@ -1,0 +1,58 @@
+﻿@model UsuarioRegisterDto
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "_LayoutDeslogado";
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<style>
+    .custom-input-width {
+        max-width: 300px;
+    }
+</style>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<h1>Cadastro de Usuários</h1>
+
+<div class="container d-flex flex-column justify-content-center">
+    <form asp-action="Registrar" asp-controller="Login" method="post">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control custom-input-width" id="email" asp-for="Email">
+        </div>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control custom-input-width" id="nome" asp-for="Nome">
+        </div>
+        <div class="mb-3">
+            <label for="cpf" class="form-label">CPF:</label>
+            <input type="text" class="form-control custom-input-width" id="cpf" asp-for="CPF">
+        </div>
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha:</label>
+            <input type="password" class="form-control custom-input-width" id="senha" asp-for="Senha">
+        </div>
+        <div class="mb-3">
+            <label for="senha" class="form-label">Confirmar Senha:</label>
+            <input type="password" class="form-control custom-input-width" id="senha" asp-for="ConfirmaSenha">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary w-2 mx-200">Cadastrar</button>
+            <a class="btn btn-primary w-7" asp-action="Index" asp-controller="Login">Voltar</a>
+        </div>
+    </form>
+</div>

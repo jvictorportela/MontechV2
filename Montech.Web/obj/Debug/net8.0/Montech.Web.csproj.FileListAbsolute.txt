@@ -283,3 +283,4 @@ C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\refint\Montech
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.pdb
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\Montech.Web.genruntimeconfig.cache
 C:\ProjetosPessoais\MontechV2-master\Montech.Web\obj\Debug\net8.0\ref\Montech.Web.dll
+C:\ProjetosPessoais\MontechV2-master\Montech.Web\bin\Debug\net8.0\Newtonsoft.Json.dll

@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Montech.Web.Models;
+using Montech.Web.Repository.Sessao;
 using System.Diagnostics;
 
 namespace Montech.Web.Controllers;
@@ -8,6 +8,7 @@ namespace Montech.Web.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ISessaoInterface _sessaoInterface;
 
     public HomeController(ILogger<HomeController> logger)
     {

@@ -4,6 +4,19 @@
 
 @model ProdutoModel
 
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-dark" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-dark" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
 <h1 class="display-4">Editar Produto</h1>
 
 <form asp-controller="Produto" asp-action="EditarProduto" method="post" class="col" enctype="multipart/form-data">
